@@ -34,7 +34,9 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyASTPC3X_oKy-jnwZQtp5aA_7jHRMPDYx4"/>
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

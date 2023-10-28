@@ -8,45 +8,16 @@
         android:layout_height="match_parent"
         android:padding="16dp"
         tools:context=".MainActivity">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
 
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/map"
-                android:name="com.google.android.gms.maps.SupportMapFragment"
-                android:layout_width="417dp"
-                android:layout_height="294dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
 
-            </androidx.fragment.app.FragmentContainerView>
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            >-->
 
-            <TextView
-                android:id="@+id/innovationStudioCounter"
-                android:layout_width="369dp"
-                android:layout_height="23dp"
-                android:text="Visit to innovation studio geofence:  0"
-                app:layout_constraintBottom_toTopOf="@+id/map"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.224" />
+<!--           -->
 
-            <TextView
-                android:id="@+id/salisburyLabsCounter"
-                android:layout_width="369dp"
-                android:layout_height="23dp"
-                android:text="Visit to salisbury labs geofence: 0"
-                app:layout_constraintBottom_toTopOf="@+id/map"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/innovationStudioCounter" />
-
-        </LinearLayout>
-
+<!--        </LinearLayout>-->
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -54,10 +25,35 @@
             android:layout_centerHorizontal="true"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/salisburyLabsCounter"
+                android:layout_width="369dp"
+                android:layout_height="23dp"
+                android:text="Visit to salisbury labs geofence: 0"
+                />
+
+            <TextView
+                android:id="@+id/innovationStudioCounter"
+                android:layout_width="369dp"
+                android:layout_height="23dp"
+                android:text="Visit to innovation studio geofence:  0"
+                />
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="417dp"
+                android:layout_height="294dp"
+              >
+
+            </androidx.fragment.app.FragmentContainerView>
+
             <ImageView
                 android:id="@+id/img_activity"
                 android:layout_width="wrap_content"
                 android:layout_height="200dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="25dp"
                  />
 
             <TextView
@@ -79,38 +75,6 @@
                 android:textAllCaps="true"
                 android:textSize="14dp" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:weightSum="3"
-            android:layout_alignParentBottom="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-<!--            <Button-->
-<!--                android:layout_margin="5dp"-->
-<!--                android:text="START"-->
-<!--                android:id="@+id/btn_start_tracking"-->
-<!--                android:layout_weight="1"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content">-->
-<!--            </Button>-->
-<!--            <Button-->
-<!--                android:layout_margin="5dp"-->
-<!--                android:text="STOP"-->
-<!--                android:id="@+id/btn_stop_tracking"-->
-<!--                android:layout_weight="1"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content">-->
-<!--            </Button>-->
-<!--            <Button-->
-<!--                android:layout_margin="5dp"-->
-<!--                android:text="SLEEP"-->
-<!--                android:id="@+id/btn_sleep"-->
-<!--                android:layout_weight="1"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content">-->
-<!--            </Button>-->
         </LinearLayout>
     </RelativeLayout>
 </layout>

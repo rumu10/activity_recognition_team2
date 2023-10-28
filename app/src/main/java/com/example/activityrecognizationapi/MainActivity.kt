@@ -60,7 +60,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMapLon
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.executePendingBindings()
 
         //Mar
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
@@ -69,9 +70,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMapLon
         geofencingClient = LocationServices.getGeofencingClient(this)
         geofenceHelper = GeofenceHelper(this)
 
-
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        binding.executePendingBindings()
 
         sleepRequestManager = SleepRequestManager(this)
 
