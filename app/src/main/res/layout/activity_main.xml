@@ -26,17 +26,19 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/salisburyLabsCounter"
-                android:layout_width="369dp"
-                android:layout_height="23dp"
-                android:text="Visit to salisbury labs geofence: 0"
-                />
-
-            <TextView
                 android:id="@+id/innovationStudioCounter"
                 android:layout_width="369dp"
                 android:layout_height="23dp"
                 android:text="Visit to innovation studio geofence:  0"
+                />
+
+            <TextView
+
+                android:id="@+id/salisburyLabsCounter"
+                android:layout_width="369dp"
+                android:layout_height="23dp"
+                android:text="Visit to salisbury labs geofence: 0"
+
                 />
 
             <androidx.fragment.app.FragmentContainerView

@@ -11,6 +11,7 @@ import android.media.MediaPlayer
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -423,9 +424,10 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMapLon
 
     override fun onResume() {
         super.onResume()
-
         LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver,
             IntentFilter(Constants.BROADCAST_DETECTED_ACTIVITY))
+        val intentFilter = IntentFilter("UPDATE_UI_ACTION")
+        registerReceiver(updateUIReceiver, intentFilter)
     }
 
     override fun onDestroy() {
@@ -435,5 +437,34 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMapLon
         mediaPlayer?.release()
     }
 
+    override fun onPause() {
+        super.onPause()
+        unregisterReceiver(updateUIReceiver)
+    }
+
+    private val updateUIReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            if (intent?.action == "UPDATE_UI_ACTION") {
+                val GeoCounter = intent.getIntExtra("GeofenceCounter", 0)
+                updateCountersInTextViews(GeoCounter)
+            }
+        }
+    }
+    fun updateCountersInTextViews(GeoCounter: Int) {
+        if(GeoCounter==100){
+            val innovationStudioCounterTextView = findViewById<TextView>(R.id.innovationStudioCounter)
+            innovationCount +=1
+            innovationStudioCounterTextView.text = "Visit to innovation studio geofence:: $innovationCount"
+
+
+
+        }else if (GeoCounter==200){
+
+            val salisburyLabsCounterTextView = findViewById<TextView>(R.id.salisburyLabsCounter)
+            salisburyCount +=1
+            salisburyLabsCounterTextView.text = "Visit to salisbury labs geofence:: $salisburyCount"
+        }
+
+    }
 
 }
