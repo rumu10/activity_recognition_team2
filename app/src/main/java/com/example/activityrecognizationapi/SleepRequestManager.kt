@@ -14,12 +14,12 @@ class SleepRequestManager(private val context: Context) {
                 SleepServiceReceiver.createPendingIntent(context),
             SleepSegmentRequest.getDefaultSleepSegmentRequest())
 
-        Toast.makeText(context,"Start to Make Sleep Updates",Toast.LENGTH_LONG).show()
+//        Toast.makeText(context,"Start to Make Sleep Updates",Toast.LENGTH_LONG).show()
     }
 
     fun unsubscribeFromSleepUpdates() {
         ActivityRecognition.getClient(context)
             .removeSleepSegmentUpdates(SleepServiceReceiver.createPendingIntent(context))
-        Toast.makeText(context,"Stopped Sleep Updates",Toast.LENGTH_LONG).show()
+//        Toast.makeText(context,"Stopped Sleep Updates",Toast.LENGTH_LONG).show()
     }
 }
